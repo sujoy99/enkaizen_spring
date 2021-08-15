@@ -39,4 +39,17 @@ public class ToDoService {
 		return null;
 		
 	}
+	
+	public List<ToDo> createToDoItem(){
+		
+		ToDo toDoitem = new ToDo();
+		
+		toDoitem.setIsDone(false);
+		
+		List<ToDo> toDoitemList = toDoRepository.save(toDoitem);
+		
+		
+		return toDoitemList;
+		
+	}
 }

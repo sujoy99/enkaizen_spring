@@ -33,4 +33,15 @@ public class ToDoRepository {
 		
 		return toDoList;
 	}
+	
+	public List<ToDo> save(ToDo toDoitem){
+		
+		toDoitem.setId(counter++);
+		
+		toDoitem.setTask("task "+ toDoitem.getId());
+					
+		toDoList.add(toDoitem);
+		
+		return toDoList;
+	}
 }
