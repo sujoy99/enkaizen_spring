@@ -40,16 +40,26 @@ public class ToDoService {
 		
 	}
 	
-	public List<ToDo> createToDoItem(){
+	public List<ToDo> createToDoItem(ToDo toDo){
 		
 		ToDo toDoitem = new ToDo();
 		
+		toDoitem.setTask(toDo.getTask());
 		toDoitem.setIsDone(false);
 		
 		List<ToDo> toDoitemList = toDoRepository.save(toDoitem);
 		
 		
 		return toDoitemList;
+		
+	}
+	
+	public void deleteToDoItem(Long id){
+		
+		toDoRepository.delete(id);
+		
+		
+		
 		
 	}
 }
